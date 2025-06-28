@@ -118,6 +118,70 @@
       </div>
     </div>
 
+    <!-- Package Links Section -->
+    <div
+      class="mb-12 bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-600 shadow-sm"
+    >
+      <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          Get Started
+        </h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          View the package details, documentation, and community resources
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- NPM Package -->
+        <a
+          href="https://www.npmjs.com/package/vue-icons-lib"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center space-x-3 bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg p-4 transition-all duration-200 group"
+        >
+          <DiNpm class="w-8 h-8 text-red-500" />
+          <div class="text-left">
+            <div
+              class="font-semibold text-gray-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400"
+            >
+              NPM Package
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+              View on npmjs.com
+            </div>
+          </div>
+          <CgArrowTopRightR
+            class="w-4 h-4 text-gray-400 group-hover:text-red-500 dark:group-hover:text-red-400 transition-colors"
+          />
+        </a>
+
+        <!-- GitHub Repository -->
+        <a
+          href="https://github.com/obiwanpelosi/vue-icons-package"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center space-x-3 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600 rounded-lg p-4 transition-all duration-200 group"
+        >
+          <DiGithub class="w-8 h-8 text-gray-900 dark:text-white" />
+          <div class="text-left">
+            <div
+              class="font-semibold text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300"
+            >
+              GitHub
+            </div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+              View source code
+            </div>
+          </div>
+          <CgArrowTopRightR
+            class="w-4 h-4 text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors"
+          />
+        </a>
+
+        <!-- Documentation -->
+      </div>
+    </div>
+
     <!-- Icon Collections Section -->
     <div class="mb-8">
       <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
@@ -149,7 +213,8 @@ import IconGroupTile from "../components/IconGroupTile.vue";
 import NotificationToast from "../components/NotificationToast.vue";
 import { useIconCache } from "../composables/useIconCache";
 import { FiClipboard } from "vue-icons-lib/fi";
-
+import { DiNpm, DiGithub } from "vue-icons-lib/di";
+import { CgArrowTopRightR } from "vue-icons-lib/cg";
 const { iconGroups: iconGroupsData } = useIconCache();
 const copyStatus = ref<string>("");
 const showNotification = ref(false);

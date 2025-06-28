@@ -36,7 +36,9 @@ const iconGroups = computed(() =>
   groupConfig.map((group) => ({
     ...group,
     count: Object.keys(
-      iconGroupsData[group.shortName as keyof typeof iconGroupsData] || {}
+      iconGroupsData.value[
+        group.shortName as keyof typeof iconGroupsData.value
+      ] || {}
     ).length,
   }))
 );

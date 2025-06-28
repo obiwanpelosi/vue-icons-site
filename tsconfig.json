@@ -1,0 +1,15 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "../packages/icons-lib/src/**/*"
+  ],
+  "compilerOptions": {
+    "baseUrl": "."
+    // "paths": {
+    //   "vue-icons-lib": ["../packages/icons-lib/src"]
+    // }
+  }
+}

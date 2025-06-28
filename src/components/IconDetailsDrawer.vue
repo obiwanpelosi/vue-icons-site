@@ -94,33 +94,15 @@
     </aside>
   </transition>
 
-  <!-- Copy notification toast -->
-  <transition name="toast">
-    <div
-      v-if="showNotification"
-      class="fixed top-4 left-1/2 transform -translate-x-1/2 z-[60] bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2"
-    >
-      <svg
-        class="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 13l4 4L19 7"
-        />
-      </svg>
-      <span class="text-sm font-medium">{{ notificationText }}</span>
-    </div>
-  </transition>
+  <!-- Notification Toast -->
+  <NotificationToast :show="showNotification" :message="notificationText" />
 </template>
 
 <script setup lang="ts">
 import { FiClipboard } from "vue-icons-lib/fi";
 import { ref, watch } from "vue";
+import NotificationToast from "./NotificationToast.vue";
+
 const props = defineProps<{ open: boolean; icon: any }>();
 const emit = defineEmits(["close"]);
 
@@ -194,21 +176,5 @@ function copyImport(text: string) {
 .slide-enter-to,
 .slide-leave-from {
   transform: translateX(0);
-}
-
-/* Toast notification transition */
-.toast-enter-active,
-.toast-leave-active {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.toast-enter-from,
-.toast-leave-to {
-  opacity: 0;
-  transform: translate(-50%, -100%);
-}
-.toast-enter-to,
-.toast-leave-from {
-  opacity: 1;
-  transform: translate(-50%, 0);
 }
 </style>

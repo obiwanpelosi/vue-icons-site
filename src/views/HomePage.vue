@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8">
+  <div class="p-4 lg:p-8">
     <!-- Installation Section -->
     <div
       class="mb-12 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border border-green-200 dark:border-gray-600"

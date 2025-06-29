@@ -38,7 +38,7 @@
     <!-- Results -->
     <div
       v-if="filteredIcons.length > 0"
-      class="grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-3"
+      class="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-10 gap-3"
     >
       <div
         v-for="icon in filteredIcons"
@@ -67,19 +67,7 @@
     <!-- No Results -->
     <div v-else-if="query" class="text-center py-12">
       <div class="text-gray-400 dark:text-gray-500 mb-4">
-        <svg
-          class="mx-auto h-12 w-12"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          />
-        </svg>
+        <FiSearch class="mx-auto h-12 w-12" />
       </div>
       <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">
         No icons found
@@ -104,6 +92,7 @@ import { ref, computed, watch, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useIconCache } from "../composables/useIconCache";
 import IconDetailsDrawer from "../components/IconDetailsDrawer.vue";
+import { FiSearch } from "vue-icons-lib/fi";
 
 const route = useRoute();
 const router = useRouter();
